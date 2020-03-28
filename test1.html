@@ -6,11 +6,17 @@
 </head>
 <body>
 <div id="app">
+    <div v-bind:id="a" :class="a">
+        {{ a }}
+    </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
     var vm = new Vue({
-        el: '#app'
+        el: '#app',
+        data: {
+            a: 'a'
+        }
     });
 </script>
 </body>
