@@ -12,6 +12,8 @@
     <div>
         <span v-if="b">true</span>
         <span v-else>false</span>
+        <span v-show="c.a">{{ c.c }}</span>
+        <span v-show="c.b">{{ c.c }}</span>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -20,7 +22,12 @@
         el: '#app',
         data: {
             a: 'a',
-            b: true
+            b: true,
+            c: {
+                a: true,
+                b: false,
+                c: 'hello'
+            }
         }
     });
 </script>
