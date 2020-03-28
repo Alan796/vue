@@ -9,13 +9,18 @@
     <div v-bind:id="a" :class="a">
         {{ a }}
     </div>
+    <div>
+        <span v-if="b">true</span>
+        <span v-else>false</span>
+    </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
     var vm = new Vue({
         el: '#app',
         data: {
-            a: 'a'
+            a: 'a',
+            b: true
         }
     });
 </script>
