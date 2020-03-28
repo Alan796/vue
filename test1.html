@@ -15,6 +15,14 @@
         <span v-show="c.a">{{ c.c }}</span>
         <span v-show="c.b">{{ c.c }}</span>
     </div>
+    <div>
+        <ul>
+            <li v-for="person in people">
+                <span>姓名：{{ person.name }}</span>
+                <span>年龄：{{ person.age }}</span>
+            </li>
+        </ul>
+    </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
@@ -27,7 +35,14 @@
                 a: true,
                 b: false,
                 c: 'hello'
-            }
+            },
+            people: [{
+                name: 'Alan',
+                age: 18
+            }, {
+                name: 'Bob',
+                age: 20,
+            }]
         }
     });
 </script>
