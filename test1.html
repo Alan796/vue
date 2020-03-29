@@ -17,7 +17,11 @@
     </div>
     <div>
         <ul>
-            <person v-for="person in people" :name="person.name" :age="person.age" :gender="person.gender"></person>
+            <person v-for="person in people" :name="person.name" :age="person.age" :gender="person.gender">
+                <template v-slot:avatar="avatar">
+                    <span>😀</span>
+                </template>
+            </person>
         </ul>
     </div>
 </div>
@@ -34,6 +38,7 @@
         },
         template: `
             <li>
+                <slot name="avatar"></slot>
                 <span>姓名：{{ name }}</span>
                 <span>年龄：{{ age }}</span>
                 <span>性别：{{ gender }}</span>
