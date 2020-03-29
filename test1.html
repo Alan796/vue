@@ -17,15 +17,30 @@
     </div>
     <div>
         <ul>
-            <li v-for="person in people">
-                <span>姓名：{{ person.name }}</span>
-                <span>年龄：{{ person.age }}</span>
-            </li>
+            <person v-for="person in people" :name="person.name" :age="person.age" :gender="person.gender"></person>
         </ul>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
+    Vue.component('person', {
+        props: {
+            name: String,
+            age: Number,
+            gender: {
+                type: String,
+                default: '男'
+            }
+        },
+        template: `
+            <li>
+                <span>姓名：{{ name }}</span>
+                <span>年龄：{{ age }}</span>
+                <span>性别：{{ gender }}</span>
+            </li>
+        `,
+    });
+
     var vm = new Vue({
         el: '#app',
         data: {
@@ -42,6 +57,10 @@
             }, {
                 name: 'Bob',
                 age: 20,
+            }, {
+                name: 'Cindy',
+                age: 19,
+                gender: '女'
             }]
         }
     });
