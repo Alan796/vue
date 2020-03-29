@@ -37,8 +37,14 @@
                 <span>姓名：{{ name }}</span>
                 <span>年龄：{{ age }}</span>
                 <span>性别：{{ gender }}</span>
+                <button @click="show(name)">查看</button>
             </li>
         `,
+        methods: {
+            show: function (value) {
+                alert(value);
+            }
+        }
     });
 
     var vm = new Vue({
